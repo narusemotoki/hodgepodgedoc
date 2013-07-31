@@ -1,0 +1,221 @@
+# Japanese translations for Hodgepodgedoc package.
+# Copyright (C) 2013, Naruse Motoki
+# This file is distributed under the same license as the Hodgepodgedoc package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hodgepodgedoc 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-03 10:35\n"
+"PO-Revision-Date: 2013-08-01 01:41\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# c70d9bf4aa4141efb4b51fcaa9c5a69b
+#: ../../source/gh-pages_and_sphinx/index.rst:3
+msgid "GitHub Pages and Sphinx"
+msgstr "GitHub PagesとSphinx"
+
+# 154f6f4a70f14ec6bf5fd5688491c500
+#: ../../source/gh-pages_and_sphinx/index.rst:4
+msgid ""
+"This document is hosted on GitHub Pages. GitHub Pages is possible to host a "
+"static file, it's good to Sphinx. Sphinx is documentation tool, this "
+"document is also using the Sphinx."
+msgstr ""
+"このドキュメントはGitHub Pagesにホストされています。GitHub Pagesは静的ファイ"
+"ルをホスト可能なので、Sphinxを利用することができます。Sphinxはドキュメンテー"
+"ションツールで、このドキュメントにもShinxが使われています。"
+
+# d28ff5451f3447e2946514199777aaf1
+#: ../../source/gh-pages_and_sphinx/index.rst:6
+msgid ""
+"Here I will documenting how to publish a document on GitHub which was made "
+"by Sphinx."
+msgstr ""
+"ここではSphinxで作られたドキュメントをGitHub Pagesで公開する手順について記述"
+"します。"
+
+# af50a4a41d0d4d81891b0096e698e69a
+#: ../../source/gh-pages_and_sphinx/index.rst:8
+msgid ""
+"This document is written how to write a document in English, to be "
+"translated in Japanese. If you wish a different language, please substitute "
+"each en, ja, Engilish and Japanese."
+msgstr ""
+"このドキュメントでは英語でドキュメントを書き、それを日本語に翻訳する手順につ"
+"いて書いてあります。別の言語を望む場合、en、ja、英語、日本語の部分を読み換え"
+"てください。"
+
+# 3eb02511c06b4e60ae44f047b0190f5a
+#: ../../source/gh-pages_and_sphinx/index.rst:12
+#, fuzzy
+msgid "Sphinx"
+msgstr "Sphinxのインストール"
+
+# 3eb02511c06b4e60ae44f047b0190f5a
+#: ../../source/gh-pages_and_sphinx/index.rst:15
+msgid "Install Sphinx"
+msgstr "Sphinxのインストール"
+
+# f9b9cb48b061440b8df15a01890dfd4a
+#: ../../source/gh-pages_and_sphinx/index.rst:16
+msgid ""
+"If you use Ubuntu, execute the commands below. Other OS users, please run "
+"the equivalent command."
+msgstr ""
+"Ubuntuを使用しているのなら、下記のコマンドを実行します。別のOSのユーザは、そ"
+"れに相当するコマンドを実行してください。"
+
+# 1a4cdfc063e24b6e999a293daf2a3379
+#: ../../source/gh-pages_and_sphinx/index.rst:24
+msgid "Create project"
+msgstr "プロジェクト作成"
+
+# 0af18f6940a44b6d8db4ca94b52d01cc
+#: ../../source/gh-pages_and_sphinx/index.rst:25
+msgid "Sphinx has the setup command. Please execute this."
+msgstr "Sphinxはセットアップコマンドを持っているので、これを実行してください。"
+
+# f0f8e2c763f24ee1883c2eea8ed5ec48
+#: ../../source/gh-pages_and_sphinx/index.rst:31
+msgid ""
+"When you execute this, the program will have a few questions, and then "
+"responded to it. I answered [y] only this question, and using default others."
+msgstr ""
+"実行するとプログラムがいくつか質問をするので、それに回答します。私はこの質問"
+"のみyと回答し、他はデフォルトにしています。"
+
+# 791c45f4dcf544cb9c5728e676c8635c
+#: ../../source/gh-pages_and_sphinx/index.rst:41
+msgid "It will be structured as below."
+msgstr "このような構成になります。"
+
+# 0bcdb000791e412390de56a9a3c23fe2
+#: ../../source/gh-pages_and_sphinx/index.rst:56
+msgid "Multilingual"
+msgstr "多言語対応"
+
+# 36aa9d7968234b80977ecf9e82adac7e
+#: ../../source/gh-pages_and_sphinx/index.rst:57
+msgid "Change in order to extract the documentation in multiple languages​​."
+msgstr "多言語でドキュメントを展開するために手を加えます。"
+
+# 60ddde53b73a4179a1cc9f5d1cec429a
+#: ../../source/gh-pages_and_sphinx/index.rst:59
+msgid "in Makefile"
+msgstr "Makefile内"
+
+# 421a009254534f019876f8f88a52b451
+#: ../../source/gh-pages_and_sphinx/index.rst:61
+msgid "Add under the \"# Internal variables\"."
+msgstr "「# Internal variables」の下に追記"
+
+# 64c038e1fddf4a83b12ef09366db5a82
+#: ../../source/gh-pages_and_sphinx/index.rst:69
+msgid "Rewrite the section \"html:\"."
+msgstr "「html:」の項を書き換え"
+
+# b8959bd839da431f986599185f69c245
+#: ../../source/gh-pages_and_sphinx/index.rst:79
+msgid "Add generate."
+msgstr "genrateを追加"
+
+# 482eba58d57f4a178ee0a0759230a6b8
+#: ../../source/gh-pages_and_sphinx/index.rst:90
+msgid ""
+"Please note that you must use the tab to indent a Makefile. Sorry, I don't "
+"use Windows, I don't know how to write make.bat."
+msgstr ""
+"Makefileのインデントはタブを使わなければならないことに注意してください。申し"
+"訳ありませんが、私はWindowsを使用しないので、make.batの書き方は分かりません。"
+
+# 07004e07c5f14d05b21a864db1ef7a85
+#: ../../source/gh-pages_and_sphinx/index.rst:93
+msgid "Write documentation"
+msgstr "ドキュメントを書く"
+
+# f0c78534e8e94886968f274a7cc683ab
+#: ../../source/gh-pages_and_sphinx/index.rst:94
+msgid ""
+"Make a \\*.rst file in the source directory, write in reStructuredText "
+"format. Please refer to external websites for reStructuredText. Will write "
+"the English in rst file. And then will run this command."
+msgstr ""
+"sourceディレクトリ以下に\\*.rstファイルを作成し、reStructuredText形式で記述し"
+"てください。reStructuredTextについては外部のWebサイトを参照してください。rst"
+"ファイルには英語を記述します。そしてこのコマンドを実行します。"
+
+# ceb72de5e6d34c59ac8bd7f35729bedc
+#: ../../source/gh-pages_and_sphinx/index.rst:100
+msgid ""
+"Then locale directory is created, and translation file (\\*.mo) is generated "
+"in it. Will write in this way to this file."
+msgstr ""
+"するとlocaleディレクトリが作られ、その中に翻訳用ファイル(\\*.mo)が生成されま"
+"す。"
+
+# 966eebf2874d423080d3a829278256de
+#: ../../source/gh-pages_and_sphinx/index.rst:107
+msgid "Will run this command again."
+msgstr "もう一度このコマンドを実行してください。"
+
+# 3c7695f2598641fb827bd926e0fe4df0
+#: ../../source/gh-pages_and_sphinx/index.rst:113
+msgid ""
+"Please check the build/html/en and build/html/ja. Document has been "
+"generated. We repeat this procedure."
+msgstr ""
+"build/html/enとbuild/html/jaを確認してください。ドキュメントが生成されていま"
+"す。私達はこの手順を繰り返します。"
+
+# bf9202fe59ed4d19b1bde531b2af00f9
+#: ../../source/gh-pages_and_sphinx/index.rst:115
+msgid "write a rst file"
+msgstr "rstファイルを書く"
+
+# b8959bd839da431f986599185f69c245
+#: ../../source/gh-pages_and_sphinx/index.rst:116
+#: ../../source/gh-pages_and_sphinx/index.rst:118
+msgid "run \"$ make generate\""
+msgstr "「$ make generate」を実行する"
+
+# 8a7aa729d2ae4c628ec949e7513df6b8
+#: ../../source/gh-pages_and_sphinx/index.rst:117
+msgid "write a mo file"
+msgstr "moファイルを書く"
+
+# 09751901e4cc461eb7f0f32f8b9cfca7
+#: ../../source/gh-pages_and_sphinx/index.rst:119
+#, fuzzy
+msgid "check the HTML"
+msgstr "HTMLを確認する"
+
+# ae7eabc1e81644919ac34498d88b0967
+#: ../../source/gh-pages_and_sphinx/index.rst:120
+msgid "return to 1"
+msgstr "1に戻る"
+
+# 3cf7cbced46043cf8c288315deca018c
+#: ../../source/gh-pages_and_sphinx/index.rst:122
+msgid ""
+"Please make sure that if it is no longer reflected in the HTML, you do not "
+"erase incorrectly the msgid or msgstr. Also, if \"#, fuzzy\" is written, you "
+"must erase it. This indicates that there is a possibility that the source is "
+"changed, must be re-translation."
+msgstr ""
+"HTMLに反映されなくなった場合、msgidやmsgstrを誤って消していないことを確認して"
+"ください。また「#, fuzzy」と書かれている場合はこれを消す必要があります。これ"
+"はsourceが変更されて、再翻訳する必要がある可能性を示しています。"
+
+# c70d9bf4aa4141efb4b51fcaa9c5a69b
+#: ../../source/gh-pages_and_sphinx/index.rst:127
+#, fuzzy
+msgid "GitHub Pages"
+msgstr "GitHub PagesとSphinx"
