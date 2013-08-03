@@ -2,6 +2,8 @@
 Hodgepodgedoc
 =============
 
+http://narusemotoki.github.io/hodgepodgedoc/ja/index.html
+
 Setup
 =====
 ::
