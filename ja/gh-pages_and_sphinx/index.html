@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GitHub PagesとSphinx &mdash; Hodgepodgedoc 1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="Hodgepodgedoc 1 documentation" href="../index.html" />
+    <link rel="next" title="Ubuntu" href="../ubuntu/index.html" />
+    <link rel="prev" title="Welcome to Hodgepodgedoc!" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../ubuntu/index.html" title="Ubuntu"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Hodgepodgedoc!"
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Hodgepodgedoc 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="github-pages-and-sphinx">
+<h1>GitHub PagesとSphinx<a class="headerlink" href="#github-pages-and-sphinx" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このドキュメントはGitHub Pagesにホストされています。GitHub Pagesは静的ファイルをホスト可能なので、Sphinxを利用することができます。Sphinxはドキュメンテーションツールで、このドキュメントにもShinxが使われています。</p>
+<p>ここではSphinxで作られたドキュメントをGitHub Pagesで公開する手順について記述します。</p>
+<p>このドキュメントでは英語でドキュメントを書き、それを日本語に翻訳する手順について書いてあります。別の言語を望む場合、en、ja、英語、日本語の部分を読み換えてください。</p>
+<div class="section" id="sphinx">
+<h2>Sphinx<a class="headerlink" href="#sphinx" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="install-sphinx">
+<h3>Sphinxのインストール<a class="headerlink" href="#install-sphinx" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Ubuntuを使用しているのなら、下記のコマンドを実行します。別のOSのユーザは、それに相当するコマンドを実行してください。</p>
+<div class="highlight-python"><pre>$ sudo apt-get install gettext
+$ sudo easy_install sphinx-gettext-helper sphinx</pre>
+</div>
+</div>
+<div class="section" id="create-project">
+<h3>プロジェクト作成<a class="headerlink" href="#create-project" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Sphinxはセットアップコマンドを持っているので、これを実行してください。</p>
+<div class="highlight-python"><pre>$ sphinx-quickstart</pre>
+</div>
+<p>実行するとプログラムがいくつか質問をするので、それに回答します。私はこの質問のみyと回答し、他はデフォルトにしています。</p>
+<div class="highlight-python"><pre>You have two options for placing the build directory for Sphinx output.
+Either, you use a directory "_build" within the root path, or you separate
+"source" and "build" directories within the root path.
+&gt; Separate source and build directories (y/N) [n]:</pre>
+</div>
+<p>このような構成になります。</p>
+<div class="highlight-python"><pre>.
+├── Makefile
+├── build
+├── make.bat
+└── source
+     ├── _static
+     ├── _templates
+     ├── conf.py
+     └── index.rst</pre>
+</div>
+</div>
+<div class="section" id="multilingual">
+<h3>多言語対応<a class="headerlink" href="#multilingual" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>多言語でドキュメントを展開するために手を加えます。</p>
+<p>Makefile内</p>
+<p>「# Internal variables」の下に追記</p>
+<div class="highlight-python"><pre>ENSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) -D language=en source
+JASPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) -D language=ja source
+HTMLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) source</pre>
+</div>
+<p>「html:」の項を書き換え</p>
+<div class="highlight-python"><pre>html:
+        $(SPHINXBUILD) -b html $(ENSPHINXOPTS) $(BUILDDIR)/html/en
+        $(SPHINXBUILD) -b html $(JASPHINXOPTS) $(BUILDDIR)/html/ja
+        @echo
+        @echo "Build finished. The HTML pages are in $(BUILDDIR)/html/$(LANGUAGE)."</pre>
+</div>
+<p>genrateを追加</p>
+<div class="highlight-python"><pre>generate:
+        rm -rf $(BUILDDIR)/*
+        $(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) $(BUILDDIR)/locale
+        cd source; sphinx-gettext-helper -p ../$(BUILDDIR)/locale --update --build --statistics -l ja
+        $(SPHINXBUILD) -b html $(ENSPHINXOPTS) $(BUILDDIR)/html/en
+        $(SPHINXBUILD) -b html $(JASPHINXOPTS) $(BUILDDIR)/html/ja</pre>
+</div>
+<p>Makefileのインデントはタブを使わなければならないことに注意してください。申し訳ありませんが、私はWindowsを使用しないので、make.batの書き方は分かりません。</p>
+</div>
+<div class="section" id="write-documentation">
+<h3>ドキュメントを書く<a class="headerlink" href="#write-documentation" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>sourceディレクトリ以下に*.rstファイルを作成し、reStructuredText形式で記述してください。reStructuredTextについては外部のWebサイトを参照してください。rstファイルには英語を記述します。そしてこのコマンドを実行します。</p>
+<div class="highlight-python"><pre>$ make generate</pre>
+</div>
+<p>するとlocaleディレクトリが作られ、その中に翻訳用ファイル(*.mo)が生成されます。</p>
+<div class="highlight-python"><pre>msgid "This document generated by Sphinx."
+msgstr "このドキュメントはSphinxによって生成されました。"</pre>
+</div>
+<p>もう一度このコマンドを実行してください。</p>
+<div class="highlight-python"><pre>$ make generate</pre>
+</div>
+<p>build/html/enとbuild/html/jaを確認してください。ドキュメントが生成されています。私達はこの手順を繰り返します。</p>
+<ol class="arabic simple">
+<li>rstファイルを書く</li>
+<li>「$ make generate」を実行する</li>
+<li>moファイルを書く</li>
+<li>「$ make generate」を実行する</li>
+<li>check the HTML</li>
+<li>1に戻る</li>
+</ol>
+<p>HTMLに反映されなくなった場合、msgidやmsgstrを誤って消していないことを確認してください。また「#, fuzzy」と書かれている場合はこれを消す必要があります。これはsourceが変更されて、再翻訳する必要がある可能性を示しています。</p>
+</div>
+</div>
+<div class="section" id="github-pages">
+<h2>GitHub Pages<a class="headerlink" href="#github-pages" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GitHub PagesとSphinx</a><ul>
+<li><a class="reference internal" href="#sphinx">Sphinx</a><ul>
+<li><a class="reference internal" href="#install-sphinx">Sphinxのインストール</a></li>
+<li><a class="reference internal" href="#create-project">プロジェクト作成</a></li>
+<li><a class="reference internal" href="#multilingual">多言語対応</a></li>
+<li><a class="reference internal" href="#write-documentation">ドキュメントを書く</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#github-pages">GitHub Pages</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="../index.html"
+                        title="前の章へ">Welcome to Hodgepodgedoc!</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="../ubuntu/index.html"
+                        title="次の章へ">Ubuntu</a></p>
+  <h3>このページ</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/gh-pages_and_sphinx/index.txt"
+           rel="nofollow">ソースコードを表示</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>クイック検索</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../ubuntu/index.html" title="Ubuntu"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Hodgepodgedoc!"
+             >前へ</a> |</li>
+        <li><a href="../index.html">Hodgepodgedoc 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Naruse Motoki.
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3 で生成しました。
+    </div>
+  </body>
+</html>
