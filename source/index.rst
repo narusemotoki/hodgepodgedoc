@@ -10,3 +10,4 @@ Welcome to Hodgepodgedoc!
    :glob:
 
    gh-pages_and_sphinx/index
+   ubuntu/index

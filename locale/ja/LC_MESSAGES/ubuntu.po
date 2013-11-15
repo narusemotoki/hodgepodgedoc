@@ -1,0 +1,42 @@
+# Japanese translations for Hodgepodgedoc package.
+# Copyright (C) 2013, Naruse Motoki
+# This file is distributed under the same license as the Hodgepodgedoc package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Hodgepodgedoc 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-15 21:18\n"
+"PO-Revision-Date: 2013-11-15 20:56\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# b922fc7bde4e460ca029c2d7632bd785
+#: ../../source/ubuntu/index.rst:3
+msgid "Ubuntu"
+msgstr ""
+
+# 356f2c92f4c7474ca2fa46796669390b
+#: ../../source/ubuntu/index.rst:7
+msgid "Changing Caps Lock into Control"
+msgstr "Caps LockをControlにする"
+
+# 63053e5af8904c689cb74b1f6b74e1c4
+#: ../../source/ubuntu/index.rst:9
+msgid ""
+"You could easily changing Caps Lock into Control by GUI or .Xmodmap until "
+"13.04. 13.10 can't use this method. But no problem. We have alternate method."
+msgstr "13.04まではGUIや.Xmodmapにより簡単にCaps LockをControlにすることができました。13.10ではこの方法は使えません。でも問題ありません。私達は代行手段を持っています。"
+
+# ef940d834b37413dbb57f78a72d76396
+#: ../../source/ubuntu/index.rst:11
+msgid ""
+"Open ``/etc/default/keyboard`` and enter ``XKBOPTIONS=\"ctrl:nocaps\"``. And "
+"reboot."
+msgstr "``/etc/default/keyboard``を開き、``XKBOPTIONS=\"ctrl:nocaps\"``と入力して再起動します。"
